@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-gyp configure && node-gyp build",
+    "pre-publish": "npm run build",
+    "build": "node-gyp rebuild",
     "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
+  "gypfile": true,
   "devDependencies": {
     "@overlookmotel/eslint-config": "^7.2.1",
     "@overlookmotel/eslint-config-node": "^2.1.2",

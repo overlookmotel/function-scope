@@ -2,8 +2,12 @@
 
 'use strict';
 
-const addon = require('./build/Release/addon.node');
+// eslint-disable-next-line node/no-unpublished-require
+const getFunctionInfo = require('./build/Release/addon.node');
 
-console.log('addon:', addon);
+const x = 1;
+function testFn() {
+	return x;
+}
 
-// console.log(addon.hello());
+console.log(getFunctionInfo(testFn));
