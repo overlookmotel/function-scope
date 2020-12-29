@@ -1,6 +1,6 @@
 #include <node.h>
 
-namespace demo {
+namespace functionInfo {
 
 using v8::Context;
 using v8::Function;
@@ -10,7 +10,6 @@ using v8::Integer;
 using v8::Isolate;
 using v8::Local;
 using v8::Object;
-// using v8::SharedFunctionInfo;
 using v8::ScriptOrigin;
 using v8::String;
 using v8::Value;
@@ -21,7 +20,6 @@ void Method(const FunctionCallbackInfo<Value>& args) {
 	Local<Context> context = isolate->GetCurrentContext();
 
 	Local<Function> fn = Local<Function>::Cast(args[0]);
-	// SharedFunctionInfo* shared = fn->shared();
 
 	// Create return value object
 	Local<Object> ret = Object::New(isolate);
@@ -66,4 +64,4 @@ void Init(Local<Object> exports, Local<Object> module) {
 
 NODE_MODULE(NODE_GYP_MODULE_NAME, Init)
 
-}	// namespace demo
+}	// namespace functionInfo
